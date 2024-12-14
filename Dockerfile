@@ -14,4 +14,4 @@ RUN npm install express
 EXPOSE 3000
 
 # Create a simple server using Express to serve the HTML file
-CMD ["node", "server.js"]
+CMD ["node", "app.js"]
