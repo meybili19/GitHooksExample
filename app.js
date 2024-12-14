@@ -1,10 +1,14 @@
-const http = require("http");
+const express = require('express');
+const path = require('path');
 
-const server = http.createServer((req, res) => {
-    res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end("Hello world using Git Hooks");
+const app = express();
+const port = 3000;
+
+// Serve the index.html file from the current directory
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-server.listen(3000, '0.0.0.0', () => {
-    console.log("Server listening on port 3000");
+app.listen(port, () => {
+    console.log(`Server is running at http://localhost:${port}`);
 });
